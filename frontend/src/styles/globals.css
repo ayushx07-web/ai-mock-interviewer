@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-border rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted;
+  }
+}
+
+@layer components {
+  /* Input base */
+  .input-base {
+    @apply w-full bg-surface-2 border border-border focus:border-primary focus:outline-none focus:ring-0 text-foreground placeholder:text-muted rounded-sm px-3 py-2 text-sm transition-colors;
+  }
+
+  /* Button variants */
+  .btn-primary {
+    @apply bg-primary hover:bg-primary-hover text-white font-medium px-4 py-2 rounded text-sm transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2;
+  }
+
+  .btn-secondary {
+    @apply bg-surface-2 border border-border hover:bg-surface text-foreground font-medium px-4 py-2 rounded text-sm transition-colors flex items-center justify-center gap-2;
+  }
+
+  .btn-ghost {
+    @apply hover:bg-surface-2 text-muted-foreground font-medium px-4 py-2 rounded text-sm transition-colors flex items-center justify-center gap-2;
+  }
+}
